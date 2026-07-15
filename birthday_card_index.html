@@ -1,0 +1,1520 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday ❤️</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg1: #ffb8d6;
+        --bg2: #ffe5ef;
+        --bg3: #fff8fb;
+        --ruby: #ba0c43;
+        --burgundy: #59142e;
+        --pink: #ff4f92;
+        --cream-card: rgba(255, 255, 255, 0.55);
+        --shadow: 0 18px 50px rgba(180, 20, 70, 0.18);
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: radial-gradient(
+          circle at top,
+          var(--bg3),
+          var(--bg2) 42%,
+          var(--bg1)
+        );
+        font-family: "Quicksand", sans-serif;
+        color: var(--burgundy);
+      }
+      button {
+        font: inherit;
+        border: 0;
+        cursor: pointer;
+      }
+
+      .screen {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease,
+          filter 0.6s ease;
+        overflow: hidden;
+      }
+      .hidden {
+        opacity: 0;
+        pointer-events: none;
+        transform: scale(1.03);
+        filter: blur(6px);
+      }
+
+      .stars,
+      .stars:before,
+      .stars:after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-repeat: repeat;
+        pointer-events: none;
+        background-image:
+          radial-gradient(
+            circle at 20% 20%,
+            rgba(255, 255, 255, 0.9) 0 1px,
+            transparent 1.5px
+          ),
+          radial-gradient(
+            circle at 80% 30%,
+            rgba(255, 255, 255, 0.8) 0 1px,
+            transparent 1.5px
+          ),
+          radial-gradient(
+            circle at 40% 70%,
+            rgba(255, 255, 255, 0.7) 0 1px,
+            transparent 1.5px
+          ),
+          radial-gradient(
+            circle at 75% 80%,
+            rgba(255, 255, 255, 0.85) 0 1px,
+            transparent 1.5px
+          );
+        background-size: 240px 240px;
+        animation: drift 24s linear infinite;
+        opacity: 0.75;
+      }
+      .stars:before {
+        animation-duration: 35s;
+        opacity: 0.35;
+        transform: scale(1.2);
+      }
+      .stars:after {
+        animation-duration: 50s;
+        opacity: 0.2;
+        transform: scale(1.5);
+      }
+      @keyframes drift {
+        from {
+          transform: translateY(0);
+        }
+        to {
+          transform: translateY(-220px);
+        }
+      }
+
+      .aurora {
+        position: absolute;
+        inset: -25% -20% auto -20%;
+        height: 65%;
+        background:
+          radial-gradient(
+            circle at 20% 20%,
+            rgba(255, 255, 255, 0.6),
+            transparent 35%
+          ),
+          radial-gradient(
+            circle at 70% 30%,
+            rgba(255, 190, 220, 0.7),
+            transparent 38%
+          ),
+          radial-gradient(
+            circle at 40% 80%,
+            rgba(255, 255, 255, 0.3),
+            transparent 42%
+          );
+        filter: blur(30px);
+        animation: aurora 12s ease-in-out infinite alternate;
+        pointer-events: none;
+      }
+      @keyframes aurora {
+        from {
+          transform: translateY(-10px) scale(1);
+        }
+        to {
+          transform: translateY(18px) scale(1.08);
+        }
+      }
+
+      .overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.05),
+          rgba(255, 255, 255, 0.15)
+        );
+        backdrop-filter: blur(2px);
+        pointer-events: none;
+      }
+
+      #loading {
+        z-index: 50;
+        flex-direction: column;
+        background: linear-gradient(180deg, #ffd0e4, #fff0f5);
+      }
+      .heart-loader {
+        font-size: 80px;
+        filter: drop-shadow(0 0 18px rgba(255, 64, 130, 0.7));
+        animation:
+          beat 1s infinite ease-in-out,
+          glow 2s infinite ease-in-out;
+      }
+      #loading h2 {
+        margin-top: 18px;
+        color: var(--ruby);
+        letter-spacing: 0.5px;
+        text-align: center;
+        font-size: 1.15rem;
+        font-weight: 700;
+      }
+      @keyframes beat {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        20% {
+          transform: scale(1.15);
+        }
+        40% {
+          transform: scale(0.96);
+        }
+        60% {
+          transform: scale(1.1);
+        }
+        80% {
+          transform: scale(0.99);
+        }
+      }
+      @keyframes glow {
+        0%,
+        100% {
+          filter: drop-shadow(0 0 8px rgba(255, 64, 130, 0.45));
+        }
+        50% {
+          filter: drop-shadow(0 0 28px rgba(255, 64, 130, 0.9));
+        }
+      }
+
+      #intro {
+        z-index: 10;
+      }
+      .intro-wrap {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        padding: 24px;
+        width: min(900px, 92vw);
+      }
+      .title-small {
+        font-size: clamp(0.9rem, 2vw, 1.2rem);
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: #8c1d44;
+        font-weight: 700;
+      }
+      .title-main {
+        font-family: "Dancing Script", cursive;
+        font-size: clamp(3.8rem, 10vw, 6.5rem);
+        line-height: 1.1;
+        margin: 10px 0;
+        color: var(--ruby);
+        text-shadow:
+          0 4px 15px rgba(255, 255, 255, 0.9),
+          0 6px 20px rgba(186, 12, 67, 0.25);
+        animation: floaty 4s ease-in-out infinite;
+      }
+      .title-name {
+        font-size: clamp(1.6rem, 4vw, 2.5rem);
+        font-weight: 700;
+        margin: 8px 0 24px;
+        color: #7d0b2b;
+        text-shadow: 0 2px 8px rgba(255, 255, 255, 0.8);
+      }
+      .intro-note {
+        font-size: clamp(1.05rem, 2.2vw, 1.2rem);
+        color: var(--burgundy);
+        max-width: 650px;
+        margin: 0 auto 28px;
+        line-height: 1.6;
+        font-weight: 600;
+      }
+
+      .cta {
+        padding: 16px 36px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #ffffff, #ffd7e6);
+        color: var(--ruby);
+        font-weight: 700;
+        font-size: 1.15rem;
+        box-shadow: var(--shadow);
+        border: 2px solid rgba(255, 255, 255, 0.9);
+        transition:
+          0.3s transform,
+          0.3s box-shadow;
+      }
+      .cta:hover {
+        transform: translateY(-4px) scale(1.03);
+        box-shadow: 0 22px 60px rgba(180, 20, 70, 0.28);
+      }
+      .cta:active {
+        transform: translateY(-1px) scale(0.99);
+      }
+      @keyframes floaty {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-8px);
+        }
+      }
+
+      #birthday {
+        z-index: 9;
+        flex-direction: column;
+      }
+      .scene-card {
+        width: min(1000px, 92vw);
+        height: min(80vh, 700px);
+        background: var(--cream-card);
+        border: 2px solid rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(14px);
+        border-radius: 34px;
+        box-shadow: var(--shadow);
+        padding: 30px 20px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .birthday-top {
+        text-align: center;
+        position: relative;
+        z-index: 5;
+        margin-top: 10px;
+      }
+      .birthday-top h1 {
+        font-family: "Dancing Script", cursive;
+        font-size: clamp(2.8rem, 7vw, 4.8rem);
+        color: var(--ruby);
+        text-shadow:
+          0 4px 15px rgba(255, 255, 255, 0.9),
+          0 6px 20px rgba(186, 12, 67, 0.25);
+        line-height: 1.2;
+      }
+      .birthday-top p {
+        font-size: clamp(1.05rem, 2vw, 1.2rem);
+        color: var(--burgundy);
+        margin-top: 6px;
+        font-weight: 600;
+      }
+
+      .cake-container {
+        position: relative;
+        width: 100%;
+        height: 280px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        z-index: 3;
+      }
+      .table {
+        position: absolute;
+        bottom: 0;
+        width: min(520px, 90%);
+        height: 80px;
+        border-radius: 50% / 20px;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.8),
+          rgba(255, 255, 255, 0.4)
+        );
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+      }
+      .cake {
+        position: relative;
+        width: 260px;
+        height: 180px;
+        z-index: 3;
+        margin-bottom: 30px;
+        filter: drop-shadow(0 16px 22px rgba(180, 40, 90, 0.15));
+      }
+      .plate {
+        position: absolute;
+        bottom: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 290px;
+        height: 24px;
+        border-radius: 50%;
+        background: linear-gradient(180deg, #fff, #f6d8e6);
+        box-shadow: 0 10px 18px rgba(0, 0, 0, 0.12);
+      }
+      .cake-body {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 230px;
+        height: 130px;
+        border-radius: 24px;
+        background: linear-gradient(180deg, #ffdbe8 0%, #ffbcd3 100%);
+        box-shadow: inset 0 -15px 0 rgba(255, 255, 255, 0.25);
+        overflow: hidden;
+      }
+      .cake-body:before {
+        content: "";
+        position: absolute;
+        inset: 14px 12px auto;
+        height: 20px;
+        border-radius: 999px;
+        background: repeating-linear-gradient(
+          90deg,
+          #fff 0 16px,
+          #ffd1e1 16px 34px
+        );
+        opacity: 0.9;
+      }
+      .cake-layer {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 20px;
+        background: linear-gradient(180deg, #fff3f8, #ffdbe7);
+        box-shadow: inset 0 -10px 0 rgba(255, 255, 255, 0.35);
+      }
+      .cake-layer.l1 {
+        bottom: 90px;
+        width: 180px;
+        height: 50px;
+      }
+      .cake-layer.l2 {
+        bottom: 125px;
+        width: 140px;
+        height: 45px;
+      }
+      .cake-layer.l3 {
+        bottom: 155px;
+        width: 100px;
+        height: 40px;
+      }
+
+      .drip,
+      .drip:before,
+      .drip:after {
+        position: absolute;
+        content: "";
+        background: #fff;
+        top: 6px;
+        width: 14px;
+        height: 28px;
+        border-radius: 0 0 999px 999px;
+      }
+      .drip {
+        left: 18px;
+      }
+      .drip:before {
+        left: 45px;
+        height: 20px;
+      }
+      .drip:after {
+        left: 70px;
+        height: 26px;
+      }
+      .cherry {
+        position: absolute;
+        top: -14px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: #ff4f92;
+        box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.65);
+      }
+      .cherry.c1 {
+        left: 25px;
+      }
+      .cherry.c2 {
+        left: 75px;
+      }
+      .cherry.c3 {
+        left: 120px;
+      }
+      .cherry.c4 {
+        left: 155px;
+      }
+      .cherry.c5 {
+        left: 30px;
+      }
+      .cherry.c6 {
+        left: 80px;
+      }
+      .cherry.c7 {
+        left: 115px;
+      }
+      .cherry.c8 {
+        left: 20px;
+      }
+      .cherry.c9 {
+        left: 50px;
+      }
+      .cherry.c10 {
+        left: 80px;
+      }
+
+      .candles {
+        position: absolute;
+        top: -35px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 14px;
+        z-index: 4;
+      }
+      .candle {
+        width: 12px;
+        height: 40px;
+        border-radius: 999px;
+        background: linear-gradient(180deg, #fff, #ffe0ee);
+        position: relative;
+        box-shadow: inset 0 -5px 0 rgba(255, 127, 166, 0.35);
+      }
+      .candle:before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: -20px;
+        transform: translateX(-50%);
+        width: 12px;
+        height: 18px;
+        border-radius: 50% 50% 50% 50% / 55% 55% 45% 45%;
+        background: linear-gradient(180deg, #fffbe0, #ffbf44 55%, #ff6d4a 100%);
+        box-shadow: 0 0 16px 5px rgba(255, 200, 100, 0.6);
+        animation: flicker 0.14s infinite alternate;
+      }
+      @keyframes flicker {
+        from {
+          transform: translateX(-50%) rotate(-4deg) scale(0.98);
+        }
+        to {
+          transform: translateX(-50%) rotate(4deg) scale(1.05);
+        }
+      }
+
+      .balloons-wrap,
+      .hearts-wrap,
+      .petals-wrap,
+      .confetti-wrap {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        pointer-events: none;
+      }
+      .confetti {
+        position: absolute;
+        width: 10px;
+        height: 18px;
+        border-radius: 3px;
+        background: var(--c);
+        opacity: 0.95;
+        animation: confetti-fall linear infinite;
+      }
+      @keyframes confetti-fall {
+        from {
+          transform: translateY(-20px) rotate(0);
+        }
+        to {
+          transform: translateY(760px) rotate(540deg);
+          opacity: 0;
+        }
+      }
+
+      .bubble-hint {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid rgba(186, 12, 67, 0.3);
+        color: var(--ruby);
+        padding: 8px 16px;
+        border-radius: 999px;
+        font-size: 0.88rem;
+        font-weight: 700;
+        z-index: 10;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(186, 12, 67, 0.15);
+        transition: 0.2s;
+      }
+      .bubble-hint:hover {
+        background: #fff;
+        transform: scale(1.05);
+      }
+
+      #gallery {
+        z-index: 8;
+      }
+      .gallery-wrap {
+        width: min(1000px, 92vw);
+        height: min(82vh, 720px);
+        border-radius: 34px;
+        background: var(--cream-card);
+        border: 2px solid rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(14px);
+        box-shadow: var(--shadow);
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+      }
+      .gallery-head {
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      .gallery-head h2 {
+        font-family: "Dancing Script", cursive;
+        font-size: clamp(2.8rem, 6vw, 4.2rem);
+        color: var(--ruby);
+        line-height: 1.1;
+        text-shadow: 0 2px 10px rgba(255, 255, 255, 0.8);
+      }
+      .gallery-head p {
+        color: var(--burgundy);
+        font-size: 1.05rem;
+        font-weight: 600;
+      }
+
+      .slider {
+        flex: 1;
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        gap: 16px;
+        align-items: center;
+        min-height: 0;
+        margin: 10px 0;
+      }
+      .photo-stage {
+        position: relative;
+        height: 100%;
+        border-radius: 24px;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.3);
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+      }
+      .photo {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        gap: 16px;
+        padding: 16px;
+        transition:
+          opacity 0.45s ease,
+          transform 0.45s ease;
+        opacity: 0;
+        transform: scale(1.02);
+        pointer-events: none;
+      }
+      .photo.active {
+        opacity: 1;
+        transform: scale(1);
+        pointer-events: auto;
+      }
+      .photo .frame {
+        background: #fff;
+        border-radius: 18px;
+        padding: 8px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+      .photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 12px;
+        background: transparent;
+      }
+
+      .nav {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #fff, #ffd7e6);
+        color: var(--ruby);
+        font-size: 1.5rem;
+        font-weight: 700;
+        box-shadow: var(--shadow);
+        display: grid;
+        place-items: center;
+        transition: 0.2s transform;
+      }
+      .nav:hover {
+        transform: scale(1.08);
+      }
+      .thumbs {
+        display: flex;
+        gap: 8px;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 12px;
+      }
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: rgba(186, 12, 67, 0.3);
+        cursor: pointer;
+        transition:
+          0.25s transform,
+          0.25s background;
+      }
+      .dot.active {
+        background: var(--ruby);
+        transform: scale(1.4);
+      }
+
+      .gallery-action {
+        text-align: center;
+        margin-top: 5px;
+      }
+
+      #letter {
+        z-index: 7;
+      }
+      .letter-card {
+        width: min(840px, 94vw);
+        height: min(84vh, 720px);
+        border-radius: 34px;
+        background: var(--cream-card);
+        border: 2px solid rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(14px);
+        box-shadow: var(--shadow);
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        padding: 20px;
+      }
+      .envelope {
+        position: relative;
+        width: min(460px, 86vw);
+        height: 280px;
+        filter: drop-shadow(0 18px 28px rgba(150, 35, 80, 0.18));
+        transition: transform 0.9s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+      .env-base,
+      .env-flap,
+      .env-front {
+        position: absolute;
+        inset: 0;
+        border-radius: 24px;
+      }
+      .env-base {
+        background: linear-gradient(180deg, #fff 0%, #ffe1ec 100%);
+        clip-path: polygon(0 16%, 50% 60%, 100% 16%, 100% 100%, 0 100%);
+      }
+      .env-front {
+        background: linear-gradient(180deg, #ffd5e4, #ffc1d7);
+        clip-path: polygon(0 16%, 50% 60%, 100% 16%, 100% 100%, 0 100%);
+        opacity: 0.92;
+      }
+      .env-flap {
+        background: linear-gradient(180deg, #fff9fc, #ffd8e8);
+        clip-path: polygon(0 16%, 50% 0, 100% 16%, 50% 60%);
+        transform-origin: top center;
+        transition: transform 0.8s ease;
+        z-index: 2;
+      }
+      .seal {
+        position: absolute;
+        left: 50%;
+        top: 110px;
+        transform: translateX(-50%);
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle at 30% 30%,
+          #ffedf4,
+          #ff78ab 56%,
+          #ff4f92
+        );
+        display: grid;
+        place-items: center;
+        color: #fff;
+        font-size: 1.4rem;
+        z-index: 3;
+        box-shadow: 0 8px 20px rgba(255, 79, 146, 0.35);
+      }
+
+      .paper {
+        position: absolute;
+        left: 50%;
+        bottom: 10px;
+        transform: translateX(-50%) translateY(100px) scale(0.8);
+        width: 90%;
+        --paper-h: 240px;
+        height: var(--paper-h);
+        background: #fffdfc;
+        border: 2px solid #ffccd8;
+        border-radius: 24px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        padding: 28px 32px;
+        transition: all 0.9s cubic-bezier(0.25, 1, 0.5, 1);
+        opacity: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        z-index: 1;
+        overflow: hidden;
+      }
+      .letter-open .env-flap {
+        transform: rotateX(180deg);
+      }
+      .letter-open .envelope {
+        transform: translateY(100px);
+      }
+      .letter-open .paper {
+        --paper-h: min(520px, 75vh);
+        height: var(--paper-h);
+        transform: translateX(-50%)
+          translateY(calc(-230px + var(--paper-h) / 2)) scale(1);
+        width: min(620px, 92vw);
+        opacity: 1;
+        z-index: 25;
+        box-shadow: 0 25px 60px rgba(180, 20, 70, 0.35);
+      }
+
+      .paper h3 {
+        font-family: "Dancing Script", cursive;
+        font-size: clamp(2.4rem, 5vw, 3.2rem);
+        color: var(--ruby);
+        margin-bottom: 12px;
+        text-align: center;
+        flex-shrink: 0;
+      }
+      .paper .typing {
+        color: #3b0c1e;
+        font-size: clamp(1.08rem, 2.2vw, 1.22rem);
+        line-height: 1.85;
+        font-weight: 600;
+        white-space: pre-wrap;
+        flex: 1;
+        overflow-y: auto;
+        padding-right: 6px;
+        margin: 8px 0;
+        text-align: center;
+      }
+      .paper .signature {
+        text-align: right;
+        color: var(--ruby);
+        font-weight: 700;
+        font-size: 1.1rem;
+        flex-shrink: 0;
+        margin-bottom: 16px;
+      }
+
+      .paper .letter-action {
+        text-align: center;
+        margin-top: 15px;
+        flex-shrink: 0;
+        opacity: 0;
+        transform: translateY(10px);
+        transition:
+          opacity 0.5s ease,
+          transform 0.5s ease;
+        pointer-events: none;
+      }
+      .paper .letter-action.visible {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+
+      .cta-small {
+        padding: 8px 20px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #ba0c43, #ff4f92);
+        color: #fff;
+        font-weight: 700;
+        font-size: 0.95rem;
+        box-shadow: 0 6px 20px rgba(186, 12, 67, 0.3);
+        border: 2px solid #fff;
+        transition:
+          0.3s transform,
+          0.3s box-shadow;
+        cursor: pointer;
+        display: inline-block;
+      }
+      .cta-small:hover {
+        transform: translateY(-3px) scale(1.03);
+        box-shadow: 0 10px 28px rgba(186, 12, 67, 0.45);
+      }
+
+      #ending {
+        z-index: 6;
+        flex-direction: column;
+        text-align: center;
+        gap: 14px;
+      }
+      #ending h1 {
+        font-family: "Dancing Script", cursive;
+        font-size: clamp(3rem, 8vw, 5.5rem);
+        color: var(--ruby);
+        text-shadow:
+          0 4px 15px rgba(255, 255, 255, 0.9),
+          0 6px 20px rgba(186, 12, 67, 0.25);
+        line-height: 1.2;
+      }
+      #ending p {
+        color: var(--burgundy);
+        font-size: clamp(1.05rem, 2vw, 1.2rem);
+        max-width: 650px;
+        line-height: 1.7;
+        font-weight: 600;
+        margin: 0 auto;
+      }
+      .end-heart {
+        font-size: 3.5rem;
+        animation: beat 1s infinite ease-in-out;
+      }
+
+      .top-bar {
+        position: fixed;
+        left: 16px;
+        right: 16px;
+        top: 16px;
+        z-index: 60;
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        pointer-events: none;
+      }
+      .chip {
+        pointer-events: auto;
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid rgba(186, 12, 67, 0.25);
+        backdrop-filter: blur(12px);
+        color: var(--ruby);
+        border-radius: 999px;
+        padding: 8px 16px;
+        box-shadow: 0 4px 15px rgba(186, 12, 67, 0.12);
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        font-size: 0.9rem;
+      }
+      .chip small {
+        color: var(--burgundy);
+        font-weight: 600;
+      }
+      .progress {
+        width: min(280px, 38vw);
+        height: 10px;
+        border-radius: 999px;
+        background: rgba(186, 12, 67, 0.15);
+        overflow: hidden;
+      }
+      .bar {
+        height: 100%;
+        width: 0;
+        background: linear-gradient(90deg, #ff4f92, #ba0c43);
+        border-radius: 999px;
+        transition: width 0.5s ease;
+      }
+      audio {
+        display: none;
+      }
+
+      .balloon,
+      .heart-float,
+      .petal {
+        position: absolute;
+        will-change: transform, opacity;
+        pointer-events: none;
+      }
+      .balloon {
+        width: 48px;
+        height: 60px;
+        border-radius: 50% 50% 48% 48%;
+        background: linear-gradient(180deg, var(--c1), var(--c2));
+        box-shadow:
+          inset -6px -8px 14px rgba(255, 255, 255, 0.25),
+          0 8px 16px rgba(255, 0, 100, 0.12);
+      }
+      .balloon:after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 58px;
+        transform: translateX(-50%);
+        width: 2px;
+        height: 60px;
+        background: rgba(255, 255, 255, 0.8);
+      }
+      .heart-float {
+        font-size: 20px;
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+      }
+      .petal {
+        font-size: 18px;
+        opacity: 0.8;
+      }
+      .sparkle {
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 0 14px 4px rgba(255, 255, 255, 0.55);
+        animation: spark 2s ease-in-out infinite;
+        pointer-events: none;
+      }
+      @keyframes spark {
+        0%,
+        100% {
+          transform: scale(0.6);
+          opacity: 0.3;
+        }
+        50% {
+          transform: scale(1.2);
+          opacity: 1;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .scene-card,
+        .gallery-wrap,
+        .letter-card {
+          height: 86vh;
+          padding: 16px;
+        }
+        .slider {
+          grid-template-columns: 1fr;
+          grid-template-rows: auto 1fr auto;
+          gap: 8px;
+        }
+        .nav {
+          width: 40px;
+          height: 40px;
+          justify-self: center;
+        }
+        .photo {
+          grid-template-columns: 1fr;
+          grid-template-rows: repeat(2, 1fr);
+          gap: 12px;
+          padding: 12px;
+        }
+        .letter-open .paper {
+          width: 94vw;
+          --paper-h: 75vh;
+          padding: 22px 20px;
+        }
+        .bubble-hint {
+          top: 12px;
+          right: 12px;
+          font-size: 0.8rem;
+          padding: 6px 12px;
+        }
+      }
+      @media (max-width: 480px) {
+        .top-bar {
+          left: 10px;
+          right: 10px;
+          top: 10px;
+          flex-direction: column;
+          align-items: stretch;
+          gap: 8px;
+        }
+        .chip {
+          justify-content: space-between;
+        }
+        .progress {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="chip" style="flex: 1">
+        <div class="progress"><div class="bar" id="bar"></div></div>
+        <small id="stepLabel">Mở đầu</small>
+      </div>
+    </div>
+
+    <audio id="bgm" loop preload="auto">
+      <source src="music/birthday.mp3" type="audio/mpeg" />
+    </audio>
+
+    <section class="screen" id="loading">
+      <div class="heart-loader">❤️</div>
+      <h2>Đang chuẩn bị món quà thật xinh cho em...</h2>
+    </section>
+
+    <section class="screen hidden" id="intro">
+      <div class="stars"></div>
+      <div class="aurora"></div>
+      <div class="overlay"></div>
+      <div class="intro-wrap">
+        <div class="title-small">For Someone Special</div>
+        <div class="title-main">Happy Birthday</div>
+        <div class="title-name" id="nameText">My Princess</div>
+        <p class="intro-note">
+          Một món quà nho nhỏ được anh chuẩn bị bằng tất cả sự trân trọng và yêu
+          thương của mình dành cho em đó ngốc ạ.
+        </p>
+        <button class="cta" id="startBtn">🎁 Mở món quà</button>
+      </div>
+    </section>
+
+    <section class="screen hidden" id="birthday">
+      <div class="stars"></div>
+      <div class="aurora"></div>
+      <div class="overlay"></div>
+      <div class="scene-card" id="birthdayCard">
+        <div class="bubble-hint" id="skipBirthday">Xem Kỷ Niệm ➔</div>
+        <div class="birthday-top">
+          <h1>Chúc mừng sinh nhật! 🎂</h1>
+          <p>
+            Chúc em luôn vui vẻ, xinh đẹp, đạt được ước mơ và gặp thật nhiều
+            điều tốt lành.
+          </p>
+        </div>
+
+        <div class="cake-container">
+          <div class="table"></div>
+          <div class="cake">
+            <div class="plate"></div>
+            <div class="candles">
+              <div class="candle"></div>
+              <div class="candle"></div>
+              <div class="candle"></div>
+              <div class="candle"></div>
+              <div class="candle"></div>
+            </div>
+            <div class="cake-layer l3">
+              <div class="cherry c8"></div>
+              <div class="cherry c9"></div>
+              <div class="cherry c10"></div>
+            </div>
+            <div class="cake-layer l2">
+              <div class="drip"></div>
+              <div class="cherry c5"></div>
+              <div class="cherry c6"></div>
+              <div class="cherry c7"></div>
+            </div>
+            <div class="cake-layer l1">
+              <div class="drip"></div>
+              <div class="cherry c1"></div>
+              <div class="cherry c2"></div>
+              <div class="cherry c3"></div>
+              <div class="cherry c4"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="balloons-wrap" id="balloons"></div>
+        <div class="hearts-wrap" id="hearts"></div>
+        <div class="petals-wrap" id="petals"></div>
+        <div class="confetti-wrap" id="confetti"></div>
+      </div>
+    </section>
+
+    <section class="screen hidden" id="gallery">
+      <div class="stars"></div>
+      <div class="aurora"></div>
+      <div class="overlay"></div>
+      <div class="gallery-wrap">
+        <div class="gallery-head">
+          <h2>Our Memories</h2>
+          <p>16 khoảnh khắc đáng yêu được giữ lại trong từng khung hình.</p>
+        </div>
+        <div class="slider">
+          <button class="nav" id="prevBtn">‹</button>
+          <div class="photo-stage" id="photoStage"></div>
+          <button class="nav" id="nextBtn">›</button>
+        </div>
+        <div class="thumbs" id="dots"></div>
+        <div class="gallery-action">
+          <button class="cta-small" id="skipGalleryBtn">
+            Đọc Thư Gửi Em ➔
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen hidden" id="letter">
+      <div class="stars"></div>
+      <div class="aurora"></div>
+      <div class="overlay"></div>
+      <div class="letter-card" id="letterBox">
+        <div class="envelope">
+          <div class="env-base"></div>
+          <div class="env-flap"></div>
+          <div class="env-front"></div>
+          <div class="seal">❤</div>
+          <div class="paper">
+            <h3>Gửi em ❤️</h3>
+            <div class="typing" id="typing"></div>
+            <div class="signature">— Anh yêu em</div>
+            <div class="letter-action">
+              <button class="cta-small" id="skipLetterBtn">Tiếp tục ➔</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen hidden" id="ending">
+      <div class="stars"></div>
+      <div class="aurora"></div>
+      <div class="overlay"></div>
+      <div class="intro-wrap">
+        <div class="end-heart">❤️</div>
+        <h1>Cảm ơn em vì đã xuất hiện trong cuộc đời này.</h1>
+        <p id="endText">
+          Chúc em một sinh nhật thật nhiều tiếng cười, thật nhiều niềm vui và
+          thật nhiều điều ngọt ngào.
+        </p>
+        <p
+          style="
+            margin-top: 14px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            font-size: 1.15rem;
+            color: var(--ruby);
+          "
+        >
+          HAPPY BIRTHDAY
+        </p>
+        <button class="cta" id="replayBtn" style="margin-top: 24px">
+          ✨ Xem lại từ đầu
+        </button>
+      </div>
+    </section>
+
+    <script>
+      const screens = [
+        "loading",
+        "intro",
+        "birthday",
+        "gallery",
+        "letter",
+        "ending",
+      ].map((id) => document.getElementById(id));
+      const bar = document.getElementById("bar");
+      const stepLabel = document.getElementById("stepLabel");
+      const bgm = document.getElementById("bgm");
+      const startBtn = document.getElementById("startBtn");
+      const letterBox = document.getElementById("letterBox");
+      const typing = document.getElementById("typing");
+      const balloons = document.getElementById("balloons");
+      const hearts = document.getElementById("hearts");
+      const petals = document.getElementById("petals");
+      const confetti = document.getElementById("confetti");
+      const photoStage = document.getElementById("photoStage");
+      const dotsWrap = document.getElementById("dots");
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+      const nameText = document.getElementById("nameText");
+      const endText = document.getElementById("endText");
+      const skipBirthday = document.getElementById("skipBirthday");
+      const birthdayCard = document.getElementById("birthdayCard");
+      const skipGalleryBtn = document.getElementById("skipGalleryBtn");
+      const skipLetterBtn = document.getElementById("skipLetterBtn");
+      const replayBtn = document.getElementById("replayBtn");
+
+      const GIRL_NAME = "Bảo Ngọc";
+      nameText.textContent = GIRL_NAME;
+      endText.textContent =
+        "Chúc em một sinh nhật thật nhiều tiếng cười, thật nhiều niềm vui và thật nhiều điều ngọt ngào.";
+      const message = `Chúc em một tuổi mới luôn bình an, vui vẻ và rạng rỡ.
+Cảm ơn em nhiều lắm vì đã đem đến rất nhiều điều dịu dàng và đẹp đẽ đến với anh.
+Mong rằng hôm nay em sẽ cười thật nhiều, và những ngày sau này cũng luôn nhẹ nhàng như vậy.
+Chúc em sinh nhật thật hạnh phúc, thật đáng nhớ.
+Hy vọng em và anh cho dù cách trở vẫn sẽ đồng hành cùng nhau trên con đường sắp tới.`;
+
+      const photos = Array.from(
+        { length: 16 },
+        (_, i) => `photos/photo${String(i + 1).padStart(2, "0")}.jpg`,
+      );
+
+      const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+      const show = (id) => {
+        screens.forEach((s) => s.classList.add("hidden"));
+        document.getElementById(id).classList.remove("hidden");
+        const idx = screens.findIndex((s) => s.id === id);
+        bar.style.width = `${(idx / (screens.length - 1)) * 100}%`;
+        const labels = {
+          loading: "Chuẩn bị",
+          intro: "Mở đầu",
+          birthday: "Sinh nhật",
+          gallery: "Kỷ niệm",
+          letter: "Lá thư",
+          ending: "Kết thúc",
+        };
+        stepLabel.textContent = labels[id] || "Mở đầu";
+      };
+
+      async function forcePlayMusic() {
+        try {
+          bgm.loop = true;
+          await bgm.play();
+        } catch (e) {
+          console.log(
+            "Không thể tự phát nhạc do chính sách bảo mật trình duyệt, đang chờ tương tác của người dùng.",
+          );
+        }
+      }
+
+      function rand(min, max) {
+        return Math.random() * (max - min) + min;
+      }
+      function makeBalloons() {
+        const colors = [
+          ["#ffd2e6", "#ff78b4"],
+          ["#fff1a6", "#ffcc5c"],
+          ["#c7f0ff", "#6ccff6"],
+          ["#ffd7ff", "#ff8ce1"],
+          ["#d4ffd6", "#68d39f"],
+        ];
+        for (let i = 0; i < 12; i++) {
+          const b = document.createElement("div");
+          b.className = "balloon";
+          const c = colors[i % colors.length];
+          b.style.setProperty("--c1", c[0]);
+          b.style.setProperty("--c2", c[1]);
+          b.style.left = rand(2, 95) + "%";
+          b.style.top = rand(70, 120) + "%";
+          b.style.animation = `floatUp ${rand(7, 13)}s linear infinite`;
+          b.style.transform = `translateY(${rand(0, 20)}px) scale(${rand(0.8, 1.2)})`;
+          balloons.appendChild(b);
+        }
+        const style = document.createElement("style");
+        style.textContent = `@keyframes floatUp { from { transform: translateY(0) } to { transform: translateY(-140vh) } }`;
+        document.head.appendChild(style);
+      }
+
+      function makeHearts() {
+        const icons = ["❤️", "💖", "💘", "💕", "💗"];
+        for (let i = 0; i < 20; i++) {
+          const h = document.createElement("div");
+          h.className = "heart-float";
+          h.textContent = icons[i % icons.length];
+          h.style.left = rand(0, 100) + "%";
+          h.style.top = rand(70, 120) + "%";
+          h.style.fontSize = rand(16, 24) + "px";
+          h.style.animation = `heartUp ${rand(6, 12)}s linear infinite`;
+          h.style.animationDelay = `${rand(0, 6)}s`;
+          hearts.appendChild(h);
+        }
+        const s = document.createElement("style");
+        s.textContent = `@keyframes heartUp{0%{transform:translateY(0) rotate(0);opacity:0}10%{opacity:1}100%{transform:translateY(-150vh) rotate(360deg);opacity:0}}`;
+        document.head.appendChild(s);
+      }
+
+      function makePetals() {
+        const icons = ["🌸", "🌷", "✿"];
+        for (let i = 0; i < 16; i++) {
+          const p = document.createElement("div");
+          p.className = "petal";
+          p.textContent = icons[i % icons.length];
+          p.style.left = rand(0, 100) + "%";
+          p.style.top = rand(-20, 120) + "%";
+          p.style.animation = `petalFall ${rand(7, 14)}s linear infinite`;
+          p.style.animationDelay = `${rand(0, 8)}s`;
+          p.style.transform = `rotate(${rand(-25, 25)}deg) scale(${rand(0.8, 1.2)})`;
+          petals.appendChild(p);
+        }
+        const s = document.createElement("style");
+        s.textContent = `@keyframes petalFall{0%{transform:translateY(-20px) translateX(0) rotate(0);opacity:0}10%{opacity:1}100%{transform:translateY(140vh) translateX(${rand(-80, 80)}px) rotate(360deg);opacity:0}}`;
+        document.head.appendChild(s);
+      }
+
+      function makeConfetti() {
+        const colors = [
+          "#fff",
+          "#ffd166",
+          "#ff7bac",
+          "#8be9ff",
+          "#c7ffb8",
+          "#ffd1e6",
+        ];
+        for (let i = 0; i < 70; i++) {
+          const c = document.createElement("div");
+          c.className = "confetti";
+          c.style.setProperty("--c", colors[i % colors.length]);
+          c.style.left = rand(0, 100) + "%";
+          c.style.top = rand(-30, 20) + "%";
+          c.style.animationDuration = rand(3.5, 7) + "s";
+          c.style.animationDelay = rand(0, 5) + "s";
+          c.style.transform = `rotate(${rand(0, 180)}deg)`;
+          confetti.appendChild(c);
+        }
+      }
+
+      function makeStars() {
+        document.querySelectorAll(".stars").forEach((layer) => {
+          for (let i = 0; i < 25; i++) {
+            const s = document.createElement("div");
+            s.className = "sparkle";
+            s.style.left = rand(0, 100) + "%";
+            s.style.top = rand(0, 100) + "%";
+            s.style.animationDelay = rand(0, 2) + "s";
+            s.style.transform = `scale(${rand(0.5, 1.2)})`;
+            layer.appendChild(s);
+          }
+        });
+      }
+
+      const photoCards = [];
+      for (let i = 0; i < 8; i++) {
+        const wrap = document.createElement("div");
+        wrap.className = "photo" + (i === 0 ? " active" : "");
+        for (let j = 0; j < 2; j++) {
+          const idx = i * 2 + j;
+          const card = document.createElement("div");
+          card.className = "frame";
+          const img = document.createElement("img");
+          img.src = photos[idx];
+          img.alt = `photo ${idx + 1}`;
+          img.onerror = () => {
+            img.style.display = "none";
+            card.style.background = "linear-gradient(135deg,#fff,#ffe6ef)";
+            card.insertAdjacentHTML(
+              "beforeend",
+              `<div style="flex:1;display:grid;place-items:center;color:#ba0c43;font-weight:700;font-size:0.95rem;padding:8px;text-align:center">Ảnh ${idx + 1}<br><span style="font-size:.78rem;font-weight:500;opacity:.85;color:#59142e;">thay bằng photos/photo${String(idx + 1).padStart(2, "0")}.jpg</span></div>`,
+            );
+          };
+          card.append(img);
+          wrap.appendChild(card);
+        }
+        photoStage.appendChild(wrap);
+        photoCards.push(wrap);
+
+        const d = document.createElement("div");
+        d.className = "dot" + (i === 0 ? " active" : "");
+        d.addEventListener("click", () => goSlide(i));
+        dotsWrap.appendChild(d);
+      }
+      const dots = [...dotsWrap.children];
+      let slide = 0;
+      function goSlide(n) {
+        slide = (n + 8) % 8;
+        photoCards.forEach((p, i) => p.classList.toggle("active", i === slide));
+        dots.forEach((d, i) => d.classList.toggle("active", i === slide));
+      }
+      prevBtn.addEventListener("click", () => goSlide(slide - 1));
+      nextBtn.addEventListener("click", () => goSlide(slide + 1));
+
+      async function typeText(el, text, speed = 45) {
+        el.textContent = "";
+        for (let i = 0; i < text.length; i++) {
+          el.textContent += text[i];
+          await wait(speed);
+        }
+      }
+
+      let galleryTriggered = false;
+      let letterTriggered = false;
+      let endingTriggered = false;
+
+      const goToGallery = () => {
+        if (galleryTriggered) return;
+        galleryTriggered = true;
+        show("gallery");
+      };
+
+      const goToLetter = async () => {
+        if (letterTriggered) return;
+        letterTriggered = true;
+        show("letter");
+        letterBox.classList.add("letter-open");
+        await wait(900);
+
+        // Đảm bảo nút Tiếp tục luôn ẩn khi bắt đầu gõ chữ
+        document.querySelector(".letter-action").classList.remove("visible");
+
+        await typeText(typing, message, 45);
+
+        // Hiện nút Tiếp tục sau khi gõ xong lá thư
+        document.querySelector(".letter-action").classList.add("visible");
+      };
+
+      const goToEnding = (e) => {
+        if (e) e.stopPropagation();
+        if (endingTriggered) return;
+        endingTriggered = true;
+        show("ending");
+      };
+
+      birthdayCard.addEventListener("click", goToGallery);
+      skipBirthday.addEventListener("click", (e) => {
+        e.stopPropagation();
+        goToGallery();
+      });
+
+      skipGalleryBtn.addEventListener("click", goToLetter);
+      skipLetterBtn.addEventListener("click", goToEnding);
+
+      // Xử lý sự kiện quay lại từ đầu (Reset)
+      replayBtn.addEventListener("click", () => {
+        galleryTriggered = false;
+        letterTriggered = false;
+        endingTriggered = false;
+
+        // Đóng lá thư và reset nội dung chữ gõ
+        letterBox.classList.remove("letter-open");
+        typing.textContent = "";
+        document.querySelector(".letter-action").classList.remove("visible");
+
+        // Chuyển về màn hình mở đầu
+        show("intro");
+      });
+
+      async function run() {
+        makeStars();
+        makeBalloons();
+        makeHearts();
+        makePetals();
+        makeConfetti();
+        await wait(1000);
+        show("intro");
+
+        startBtn.addEventListener(
+          "click",
+          async () => {
+            await forcePlayMusic();
+            show("birthday");
+            document.getElementById("birthday").style.filter = "saturate(1.03)";
+          },
+          { once: true },
+        );
+      }
+
+      run();
+    </script>
+  </body>
+</html>
